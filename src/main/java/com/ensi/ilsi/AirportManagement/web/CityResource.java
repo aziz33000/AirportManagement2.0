@@ -2,6 +2,7 @@ package com.ensi.ilsi.AirportManagement.web;
 
 import com.ensi.ilsi.AirportManagement.service.CityService;
 import com.ensi.ilsi.AirportManagement.web.dto.CityDto;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import static com.ensi.ilsi.AirportManagement.common.Web.API;
 
 @RestController
 @RequestMapping(API + "/cities")
+@Api(value="city", description="Operations pertaining to cities")
 public class CityResource {
     private final CityService cityService;
 

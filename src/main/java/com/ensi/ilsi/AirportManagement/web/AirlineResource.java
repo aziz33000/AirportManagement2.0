@@ -2,6 +2,7 @@ package com.ensi.ilsi.AirportManagement.web;
 
 import com.ensi.ilsi.AirportManagement.service.AirlineService;
 import com.ensi.ilsi.AirportManagement.web.dto.AirlineDto;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import static com.ensi.ilsi.AirportManagement.common.Web.API;
 
 @RestController
 @RequestMapping(API + "/airlines")
+@Api(value="airline", description="Operations pertaining to airlines")
 public class AirlineResource {
     private final AirlineService airlineService;
 
@@ -24,7 +26,7 @@ public class AirlineResource {
     public AirlineDto findById(@PathVariable Long id) {
         return this.airlineService.findById(id);
     }
-    
+
     @PostMapping
     public AirlineDto create(@RequestBody AirlineDto airlineDto) {
         return this.airlineService.create(airlineDto);

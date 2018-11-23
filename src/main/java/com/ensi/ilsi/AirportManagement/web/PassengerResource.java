@@ -3,6 +3,7 @@ package com.ensi.ilsi.AirportManagement.web;
 
 import com.ensi.ilsi.AirportManagement.service.PassengerService;
 import com.ensi.ilsi.AirportManagement.web.dto.PassengerDto;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import static com.ensi.ilsi.AirportManagement.common.Web.API;
 
 @RestController
 @RequestMapping(API + "/passengers")
+@Api(value="passenger", description="Operations pertaining to passenger")
 public class PassengerResource {
 
     private final PassengerService passengerService;
